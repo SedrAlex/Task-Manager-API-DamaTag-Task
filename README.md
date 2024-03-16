@@ -19,7 +19,28 @@ MongoDB Atlas: A fully-managed cloud database developed by the same people that 
 
 <li>jsonwebtoken: An implementation of JSON Web Tokens (JWT) for Node.js, used for creating and verifying tokens for authentication.</li>
 
-<li>dotenv: A zero-dependency module that loads environment variables from a .env file into process.env. It's used for managing environment variables, such as database connection strings and secret keys.</li>
+<li>dotenv: A zero-dependency module that loads environment variables from a .env file into process.env. It's used for managing environment variables, such as database connection 
+  strings and secret keys.</li>
 
 <li>cors: A package for providing a Connect/Express middleware that can be used to enable CORS with various options. It's used to handle Cross-Origin Resource Sharing, making it possible for the API to be consumed by web applications hosted on different domains</li>
 </ul>
+
+
+## Prerequisites
+Before you begin, ensure you have the following installed on your system:
+
+Node.js (v14.x or higher): Node.js is a JavaScript runtime that allows you to run JavaScript on your server. You can download it from the official Node.js website.
+MongoDB (v4.x or higher): MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. You can download it from the official MongoDB website.
+
+
+##Setting Up Your Environment
+
+Clone the Repository: Use git clone to clone the repository.
+Navigate to Server Directory: Use `cd server` server to navigate to the project directory.
+Install Dependencies: Run `npm install` to install all necessary dependencies.
+Configure Environment Variables: Create a `config.env` file in the `src`  directory and set the following environment variables:
+MONGO_URI: Your MongoDB database URL
+PORT: The port number on which your application will run
+TOKEN_SECRET_KEY: Your JSON Web Token (JWT) secret key
+Start the Server: Run `npm start` to start the server.
+Verify the Application is Running: Open your web browser and navigate to http://localhost:<PORT>, replacing <PORT> with the port number you specified in the `.env` file.
