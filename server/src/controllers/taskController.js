@@ -35,7 +35,7 @@ const getTask = async (req, res) => {
     res.status(200).json({ task });
   } catch (error) {
     res.status(404).json({
-      message: `Sorry. Task with provided id doesn't exist`,
+      message: error.message
     });
   }
 };
@@ -62,7 +62,8 @@ const updateTask = async (req, res) => {
     res.status(200).json({ task });
   } catch (error) {
     res.status(404).json({
-      message: `Sorry. Task with provided id doesn't exist`,
+      message: error.message
+      ,
     });
   }
 };
@@ -76,7 +77,7 @@ try{
   const task = await Task.findOneAndDelete({ _id: taskId, createdBy: userId });
 
   if (!task) {
-    throw new NotFoundError(`Sorry. Task with id: ${taskId} doesn't exist`);
+    throw new Error(`Sorry. Task with id: ${taskId} doesn't exist`);
   }
 
   res
@@ -85,7 +86,7 @@ try{
 }
 catch (error) {
   res.status(404).json({
-  message: `Sorry. Task with provided id doesn't exist`,
+    message: error.message
   });
 }
 };

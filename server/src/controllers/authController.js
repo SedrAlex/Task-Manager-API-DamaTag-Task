@@ -1,8 +1,5 @@
 const User = require("../models/User.js");
-const {
-  BadRequestError,
-  NotFoundError,
-} = require("../errors/custom-errors.js");
+
 const asyncHandler = require("express-async-handler");
 
 //Register User
