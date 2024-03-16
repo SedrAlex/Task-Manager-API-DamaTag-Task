@@ -1,24 +1,36 @@
-const jwt  = require("jsonwebtoken");
-const { UnauthorizedError } = require("../errors/custom-errors") ;
+const jwt = require("jsonwebtoken");
+const asyncHandler = require("express-async-handler");
+const User = require("../models/User");
 
-const verifyToken = async (req, res, next) => {
-  if (
-    !req.headers.authorization ||
-    !req.headers.authorization.startsWith("Bearer")
-  ) {
-    throw new UnauthorizedError("Token not provided");
-  }
-
-  const token = req.headers.authorization.split(" ")[1];
-
+const protect = asyncHandler(async (req, res, next) => {
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = { name: decoded.name, userId: decoded.userId };
-    // console.log(req.user);
-    next();
-  } catch (error) {
-    throw new UnauthorizedError(`Authentication failed. You are not authorized to access this route`);
-  }
-};
+    if (
+      !req.headers.authorization ||
+      !req.headers.authorization.startsWith("Bearer")
+    ) {
+      throw new Error("Token not provided");
+    }
+      const token = req.headers.authorization.split(" ")[1];
+      if (!token){
+        res.status(401);
+        throw new Error("Not authorized,please login.");
+       }
+      
+      const decoded = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
 
-module.exports =  {verifyToken};
+      //Get user id from token
+      req.user = { name: decoded.name, userId: decoded.userId };
+
+      next();
+      console.log(req.user);
+
+
+  } catch (error) {
+    res.json({
+      message: error.message,
+    });
+  }
+
+});
+
+module.exports = { protect };
