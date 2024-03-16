@@ -78,23 +78,13 @@ Each user is assigned one or more roles, and these roles determine what actions 
 ## Data Management
 Data within the Task Manager API is managed using MongoDB, a NoSQL database that stores data in flexible, JSON-like documents. The API defines several data models, including User and Task, which are used to structure the data stored in MongoDB.
 
-Database Schemas
-User: Stores information about registered users, including their username, emails, hashed password.
-Task: Represents tasks created by users, including details such as the task title, description,createdBy and completion status.
-Data Models
+# Database Schemas
+<ul>
+<li>User: Stores information about registered users, including their username, emails, hashed password.</li>
+<li></li>Task: Represents tasks created by users, including details such as the task title, description,createdBy and completion status.</li>
+</ul>
+  # Data Models
 The API uses Mongoose, an Object Data Modeling (ODM) library for MongoDB and Node.js, to define these data models. Mongoose schemas are used to enforce structure on the data, ensuring that each document stored in MongoDB adheres to the defined schema.
-
-Data Manipulation Methods
-The API provides endpoints for creating, reading, updating, and deleting tasks. These endpoints interact with the MongoDB database to perform CRUD (Create, Read, Update, Delete) operations on the Task model.
-
-
-
-
-
-
-
-
-
 
 
 # Contact
