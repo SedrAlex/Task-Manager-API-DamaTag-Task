@@ -28,19 +28,22 @@ MongoDB Atlas: A fully-managed cloud database developed by the same people that 
 
 ## Prerequisites
 Before you begin, ensure you have the following installed on your system:
-
-Node.js (v14.x or higher): Node.js is a JavaScript runtime that allows you to run JavaScript on your server. You can download it from the official Node.js website.
-MongoDB (v4.x or higher): MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. You can download it from the official MongoDB website.
-
+<ul>
+<li>Node.js (v14.x or higher): Node.js is a JavaScript runtime that allows you to run JavaScript on your server. You can download it from the official Node.js website.</li>
+<li></li>MongoDB (v4.x or higher): MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. You can download it from the official MongoDB website.</li>
+</ul>
 
 ##Setting Up Your Environment
-
-Clone the Repository: Use git clone to clone the repository.
-Navigate to Server Directory: Use `cd server` server to navigate to the project directory.
-Install Dependencies: Run `npm install` to install all necessary dependencies.
-Configure Environment Variables: Create a `config.env` file in the `src`  directory and set the following environment variables:
-MONGO_URI: Your MongoDB database URL
-PORT: The port number on which your application will run
-TOKEN_SECRET_KEY: Your JSON Web Token (JWT) secret key
-Start the Server: Run `npm start` to start the server.
-Verify the Application is Running: Open your web browser and navigate to http://localhost:<PORT>, replacing <PORT> with the port number you specified in the `.env` file.
+<ul>
+<li>Clone the Repository: Use `git clone` to clone the repository.</li>
+<li>Navigate to Server Directory: Use `cd server` server to navigate to the project directory.</li>
+<li>Install Dependencies: Run `npm install` to install all necessary dependencies.</li>
+<li>Configure Environment Variables: Create a `config.env` file in the `src`  directory and set the following environment variables:</li>
+  <ul>
+<li>MONGO_URI: Your MongoDB database URL</li>
+<li>PORT: The port number on which your application will run</li>
+<li>TOKEN_SECRET_KEY: Your JSON Web Token (JWT) secret key</li>
+    </ul>
+<li>Start the Server: Run `npm start` to start the server.</li>
+<li>Verify the Application is Running: Open your web browser and navigate to http://localhost:<PORT>, replacing <PORT> with the port number you specified in the `.env` file.</li>
+</ul>
